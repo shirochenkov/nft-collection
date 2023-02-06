@@ -11,10 +11,13 @@ interface InputProps extends React.ComponentProps<"input"> {
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ hasValue, clearValue, ...restProps }, ref) => {
-    const handleClick = useCallback((e: React.MouseEvent<HTMLElement>) => {
-      e.preventDefault;
-      clearValue();
-    }, []);
+    const handleClick = useCallback(
+      (e: React.MouseEvent<HTMLElement>) => {
+        e.preventDefault;
+        clearValue();
+      },
+      [clearValue]
+    );
 
     return (
       <div className={styles.container}>
@@ -29,3 +32,5 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
+
+Input.displayName = "Input";

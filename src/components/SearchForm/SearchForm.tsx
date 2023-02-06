@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useCallback } from "react";
 
 import { useRouter } from "next/router";
 
@@ -39,11 +39,11 @@ export const SearchForm: FC<SearchFormProps> = ({ onSearch }) => {
       setValue("search", search);
       onSearch(search);
     }
-  }, [router.isReady, search]);
+  }, [router.isReady, search, onSearch, setValue]);
 
-  const handleClear = () => {
+  const handleClear = useCallback(() => {
     setValue("search", "");
-  };
+  }, [setValue]);
 
   return (
     <div className={styles.container}>
