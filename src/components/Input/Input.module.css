@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  width: 100%;
+
+  padding: 6px 16px;
+  gap: 10px;
+
+  border-radius: var(--border-radius);
+  border: 1px solid #005d84;
+}
+
+.input {
+  all: unset;
+  width: 100%;
+  line-height: 20px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.clear {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
